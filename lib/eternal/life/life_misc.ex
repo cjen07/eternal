@@ -23,7 +23,7 @@ defmodule Eternal.Life.Misc do
     File.rm(path)
   end
 
-  def new(name, script) do
+  def new(name, script \\ "") do
     path = name_to_path(name)
 
     if File.exists?(path) do
@@ -33,7 +33,7 @@ defmodule Eternal.Life.Misc do
     end
   end
 
-  def upsert(name, script) do
+  def upsert(name, script \\ "") do
     path = name_to_path(name)
     File.write!(path, script)
   end
