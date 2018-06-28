@@ -19,3 +19,5 @@
 - iex> Z.n a/b/c
 - iex> Z.rm a/b/c
 - iex> Z.rm -a
+- iex> Z.see life/life
+- iex> Z.pick life/life
