@@ -15,6 +15,10 @@ defmodule Eternal.Life.Misc4 do
     GenServer.call(__MODULE__, {:jump, path})
   end
 
+  def back(name) do
+    GenServer.call(__MODULE__, {:back, name})
+  end
+
   def fetch_path() do
     GenServer.call(__MODULE__, :fetch)
   end
@@ -24,6 +28,15 @@ defmodule Eternal.Life.Misc4 do
   end
 
   def handle_call({:jump, path}, _from, state) do
+    path =
+      case path do
+        "-" <> path ->
+          state.dir <> "/" <> path
+
+        _ ->
+          path
+      end
+
     full_path = Misc.pwd() <> Misc.lib_path() <> path
 
     case System.cmd("ls", [full_path], stderr_to_stdout: true) do
@@ -35,5 +48,17 @@ defmodule Eternal.Life.Misc4 do
       _ ->
         {:reply, :error, state}
     end
+  end
+
+  def handle_call({:back, num}, _from, state) do
+    path =
+      state.dir
+      |> String.split("/")
+      |> Enum.drop(-num)
+      |> Enum.join("/")
+
+    IEx.configure(default_prompt: "%counter/#{path} ~>")
+    new_state = %{state | dir: path}
+    {:reply, :ok, new_state}
   end
 end

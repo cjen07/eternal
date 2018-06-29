@@ -4,24 +4,27 @@
 - 50 in height
 - 80 in length
 
-### usage
+### main
 
-- iex> code = "defmodule This do def is() do :cool end end"
-- iex> Eternal.Life.change("code", code)
-- iex> This.is
-- iex> Eternal.Life.Misc.remove("code")
+- ~> code = "defmodule This do def is() do :cool end end"
+- ~> Eternal.Life.change("code", code)
+- ~> This.is
+- ~> Eternal.Life.Misc.remove("code")
 
-- iex> Eternal.Life.Misc2.new_space("a/b")
-- iex> Eternal.Life.Misc2.remove_space("a")
-- iex> Eternal.Life.Misc2.see("life/life_misc")
+- ~> Eternal.Life.Misc2.new_space("a/b")
+- ~> Eternal.Life.Misc2.remove_space("a")
+- ~> Eternal.Life.Misc2.see("life/life_misc")
 
-- iex> n -a/b
-- iex> j a/b
-- iex> n d
-- iex> j
-- iex> n a/b/c
-- iex> rm a/b/c
-- iex> rm a/b/d
-- iex> rm -a
-- iex> see life/life
-- iex> pick life/life
+### details
+
+- ~> n -a/b
+- ~> n a/b/c
+- ~> rm a/b/c
+- ~> rm -a
+- ~> see a/b
+- ~> pick a/b
+- ~> j a/b
+- ~> j
+- ~> j -a
+- ~> b
+- ~> b 2

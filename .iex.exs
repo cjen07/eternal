@@ -1,3 +1,4 @@
+import IEx.Helpers, except: [b: 1]
 IEx.configure(default_prompt: "%counter/ ~>")
 alias Eternal.Life.Misc, as: M
 alias Eternal.Life.Misc2, as: M2

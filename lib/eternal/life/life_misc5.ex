@@ -8,4 +8,8 @@ defmodule Eternal.Life.Misc5 do
   defmacro j(data) do
     Misc4.jump(Misc3.parse_name(data))
   end
+
+  def b(num \\ 1) do
+    Misc4.back(num)
+  end
 end
