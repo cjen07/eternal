@@ -1,4 +1,6 @@
 defmodule Eternal.Life.Misc do
+  alias Eternal.Life.Misc4
+
   def pwd() do
     {path, 0} = System.cmd("pwd", [])
     String.trim(path)
@@ -10,8 +12,12 @@ defmodule Eternal.Life.Misc do
     String.trim(data) |> String.split()
   end
 
-  def eternal_path() do
+  def lib_path() do
     "/lib/eternal/"
+  end
+
+  def eternal_path() do
+    lib_path() <> Misc4.fetch_path() <> "/"
   end
 
   def name_to_path(name) do

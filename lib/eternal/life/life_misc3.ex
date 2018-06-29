@@ -23,7 +23,7 @@ defmodule Eternal.Life.Misc3 do
     Misc2.see(parse_name(data), with_line)
   end
 
-  defp parse_name(name) do
+  def parse_name(name) do
     Macro.to_string(name) |> String.replace(" ", "")
   end
 end

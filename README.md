@@ -15,9 +15,13 @@
 - iex> Eternal.Life.Misc2.remove_space("a")
 - iex> Eternal.Life.Misc2.see("life/life_misc")
 
-- iex> Z.n -a/b
-- iex> Z.n a/b/c
-- iex> Z.rm a/b/c
-- iex> Z.rm -a
-- iex> Z.see life/life
-- iex> Z.pick life/life
+- iex> n -a/b
+- iex> j a/b
+- iex> n d
+- iex> j
+- iex> n a/b/c
+- iex> rm a/b/c
+- iex> rm a/b/d
+- iex> rm -a
+- iex> see life/life
+- iex> pick life/life
