@@ -18,9 +18,7 @@ defmodule Eternal.Life.Misc6 do
   end
 
   def ar(n \\ "", f) do
-    alias Eternal.Life.Misc, as: M
-    a = rd(n) |> String.trim() |> String.split_at(-3) |> elem(0)
-    M.upsert("life_misc#{n}", (a <> f <> "\nend") |> Code.format_string!() |> Enum.join())
+    ap(n, f)
     IEx.Helpers.recompile()
   end
 
