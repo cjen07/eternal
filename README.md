@@ -1,5 +1,10 @@
 # Eternal
 
+### update6
+- module info
+- append functions
+- new module
+
 ### standard code block
 - 50 in height
 - 80 in length
@@ -15,7 +20,7 @@
 - ~> Eternal.Life.Misc2.remove_space("a")
 - ~> Eternal.Life.Misc2.see("life/life_misc")
 
-### details
+##### details
 
 - ~> n -a/b
 - ~> n a/b/c
