@@ -6,7 +6,11 @@ defmodule Eternal.Life.Misc6 do
   def ap(n \\ "", f) do
     alias Eternal.Life.Misc, as: M
     a = rd(n) |> String.trim() |> String.split_at(-3) |> elem(0)
-    M.upsert("life_misc#{n}", (a <> f <> "\nend") |> Code.format_string!() |> Enum.join())
+
+    M.upsert(
+      "life_misc#{n}",
+      (a <> f <> "\nend") |> Code.format_string!() |> Enum.join() |> Kernel.<>("\n")
+    )
   end
 
   def fns(n \\ "") do
