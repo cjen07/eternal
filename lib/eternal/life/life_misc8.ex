@@ -7,11 +7,11 @@ defmodule Eternal.Life.Misc8 do
     Eternal.Life.Misc1.upsert("life_misc#{n}", f)
   end
 
-  def dt(n, l, f) do
+  def md(n, l, f) do
     Eternal.Life.Misc6.rd(n)
     |> String.trim()
     |> String.split("\n")
-    |> List.update_at(l - 1, fn _ -> f end)
+    |> List.update_at(l - 1, f)
     |> Enum.join("\n")
     |> Code.format_string!()
     |> up(n)
@@ -19,15 +19,11 @@ defmodule Eternal.Life.Misc8 do
     IEx.Helpers.recompile()
   end
 
-  def ad(n, l, f) do
-    Eternal.Life.Misc6.rd(n)
-    |> String.trim()
-    |> String.split("\n")
-    |> List.update_at(l - 1, fn x -> f <> "\n" <> x end)
-    |> Enum.join("\n")
-    |> Code.format_string!()
-    |> up(n)
+  def dt(n, l, f) do
+    md(n, l, fn _ -> f end)
+  end
 
-    IEx.Helpers.recompile()
+  def ad(n, l, f) do
+    md(n, l, fn x -> f <> "\n" <> x end)
   end
 end
