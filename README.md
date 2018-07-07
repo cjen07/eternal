@@ -1,11 +1,13 @@
 # Eternal
 
-### update 6..7
+### update 6..8
 - module info
 - append functions
 - new module
 - delete lines
 - gen alias
+- update line
+- add line
 
 ### standard code block
 - 50 in height
