@@ -1,6 +1,6 @@
 defmodule Eternal.Life.Misc4 do
   use GenServer
-  alias Eternal.Life.Misc
+  alias Eternal.Life.Misc1
 
   def start_link(_args) do
     GenServer.start_link(__MODULE__, %{dir: nil}, name: __MODULE__)
@@ -37,7 +37,7 @@ defmodule Eternal.Life.Misc4 do
           path
       end
 
-    full_path = Misc.pwd() <> Misc.lib_path() <> path
+    full_path = Misc1.pwd() <> Misc1.lib_path() <> path
 
     case System.cmd("ls", [full_path], stderr_to_stdout: true) do
       {_, 0} ->

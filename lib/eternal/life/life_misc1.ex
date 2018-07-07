@@ -1,4 +1,4 @@
-defmodule Eternal.Life.Misc do
+defmodule Eternal.Life.Misc1 do
   alias Eternal.Life.Misc4
 
   def pwd() do

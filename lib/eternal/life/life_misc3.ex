@@ -1,17 +1,17 @@
 defmodule Eternal.Life.Misc3 do
-  alias Eternal.Life.{Misc, Misc2}
+  alias Eternal.Life.{Misc1, Misc2}
 
   defmacro n(data, script \\ "") do
     case parse_name(data) do
       "-" <> name -> Misc2.new_space(name)
-      name -> Misc.new(name, script)
+      name -> Misc1.new(name, script)
     end
   end
 
   defmacro rm(data) do
     case parse_name(data) do
       "-" <> name -> Misc2.remove_space(name)
-      name -> Misc.remove(name)
+      name -> Misc1.remove(name)
     end
   end
 

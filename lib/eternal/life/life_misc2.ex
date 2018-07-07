@@ -1,8 +1,8 @@
 defmodule Eternal.Life.Misc2 do
-  alias Eternal.Life.Misc
+  alias Eternal.Life.Misc1
 
   def space_to_path(space) do
-    Misc.pwd() <> Misc.eternal_path() <> space
+    Misc1.pwd() <> Misc1.eternal_path() <> space
   end
 
   def new_space(space) do
@@ -22,7 +22,7 @@ defmodule Eternal.Life.Misc2 do
   end
 
   def see(name, with_line \\ true) do
-    path = Misc.name_to_path(name)
+    path = Misc1.name_to_path(name)
     {data, 0} = System.cmd("cat", [path])
 
     data =
