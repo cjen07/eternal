@@ -26,4 +26,12 @@ defmodule Eternal.Life.Misc3 do
   def parse_name(name) do
     Macro.to_string(name) |> String.replace(" ", "")
   end
+
+  def pg(n) do
+    Eternal.Life.Misc2.see("life_misc" <> to_string(n), false)
+  end
+
+  def ce(n) do
+    Eternal.Life.Misc2.see("life_misc" <> to_string(n), true)
+  end
 end

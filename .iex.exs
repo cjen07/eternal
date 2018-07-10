@@ -1,4 +1,4 @@
-import IEx.Helpers, except: [b: 1]
+import IEx.Helpers
 IEx.configure(default_prompt: "%counter/ ~>")
 require Eternal.Life
 Eternal.Life.gen_alias(20)
