@@ -21,6 +21,7 @@ defmodule Eternal.Life.Misc6 do
     Module.concat(["Eternal", "Life", "Misc#{n}"]).__info__(:macros)
   end
 
+  @doc "append function and recompile"
   def ar(n, f) do
     ap(n, f)
     IEx.Helpers.recompile()
@@ -30,7 +31,7 @@ defmodule Eternal.Life.Misc6 do
     %{fns: fns(n), mcs: mcs(n)}
   end
 
-  def v(n) do
+  def nw(n) do
     Eternal.Life.Misc1.new("life_misc#{n}", "defmodule Eternal.Life.Misc#{n} do end")
   end
 end

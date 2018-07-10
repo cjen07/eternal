@@ -7,6 +7,7 @@ defmodule Eternal.Life.Misc8 do
     Eternal.Life.Misc1.upsert("life_misc#{n}", f)
   end
 
+  @doc "modify line by function"
   def md(n, l, f) do
     Eternal.Life.Misc6.rd(n)
     |> String.trim()
@@ -19,11 +20,18 @@ defmodule Eternal.Life.Misc8 do
     IEx.Helpers.recompile()
   end
 
+  @doc "update line"
   def dt(n, l, f) do
     md(n, l, fn _ -> f end)
   end
 
+  @doc "append line"
   def ad(n, l, f) do
     md(n, l, fn x -> f <> "\n" <> x end)
+  end
+
+  @doc "add doc"
+  def dc(n, l, f) do
+    ad(n, l, "@doc \"" <> f <> "\"")
   end
 end
