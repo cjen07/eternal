@@ -1,5 +1,8 @@
 # Eternal
 
+### 9 and problems
+- iex --sname foo -S mix
+
 ### update 6..8
 - module info
 - append functions
